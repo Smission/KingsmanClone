@@ -3,23 +3,13 @@ import { StyleSheet } from 'react-native';
 
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
-import { RootTabScreenProps } from '../types';
-import Post from '../components/Post/Post.tsx';
 
-const posts = [
-  {id: 0, name: "Mandla"},
-  {id: 1, name: "Amo"},
-  {id: 2, name: "Clarrisa"}
-]
-
-export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
+export default function TabThreeScreen() {
   return (
     <View style={styles.container}>
-      {
-        posts.map((post) =>(
-          <Post key={post.id} name={post.name}/>
-        ))
-      }
+      <Text style={styles.title}>Tab Three</Text>
+      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
+      <EditScreenInfo path="/screens/TabThreeScreen.tsx" />
     </View>
   );
 }
