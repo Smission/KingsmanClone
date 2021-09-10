@@ -4,19 +4,23 @@ import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
 import Post from '../components/Post/Post.tsx';
+import HomeHeader from '../components/Headers/HomeHeader.tsx';
 
 const posts = [
-  {id: 0, name: "Mandla", caption:"Hey guys", timePosted: "20 mns ago"},
-  {id: 1, name: "Amo" , caption:"Hey guys", timePosted: "2days ago"},
-  {id: 2, name: "Clarrisa", caption:"Hey guys", timePosted: "2mns ago"},
-  {id: 3, name: "Karabo", caption:"Hey boys", timePosted: "20 mns ago"},
-  {id: 4, name: "Sibusiso", caption:"Good day guys", timePosted: "20 mns ago"}
+  {id: 0, name: "mandla", caption:"Hey guys", timePosted: "20 mns ago"},
+  {id: 1, name: "amo" , caption:"Hey guys", timePosted: "2days ago"},
+  {id: 2, name: "clarrisa", caption:"Hey guys", timePosted: "2mns ago"},
+  {id: 3, name: "karabo", caption:"Hey boys", timePosted: "20 mns ago"},
+  {id: 4, name: "sibusiso", caption:"Good day guys", timePosted: "20 mns ago"}
 ]
 
 export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
   return (
-    <SafeAreaView style={styles.container}>
-      <ScrollView horizontal={false} showsHorizontalScrollIndicator={false}>
+    <SafeAreaView style={{ backgroundColor: 'white'}} >
+      <View style={{ paddingLeft: 5}} >  
+        <HomeHeader />
+      </View>
+      <ScrollView styles={{paddingTop: 90}} horizontal={false} showsHorizontalScrollIndicator={false} showsVerticalScrollIndicator={false}>
       {
         posts.map((post) =>(
           <Post key={post.id} name={post.name} caption={post.caption} timePosted= {post.timePosted}/>
@@ -28,11 +32,6 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
   title: {
     fontSize: 20,
     fontWeight: 'bold',

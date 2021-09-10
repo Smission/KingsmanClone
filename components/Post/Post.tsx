@@ -14,14 +14,15 @@ const Post = (props) =>{
     }
 
     return (
-        <View style={{marginBottom: 5}}> 
-            <View style={{ flexDirection: 'row', flexWrap: 'wrap', alignItems:'center'}}> 
+        <View style={{marginBottom: 5, backgroundColor: 'white'}}> 
+            <View style={{ flexDirection: 'row', flexWrap: 'wrap', alignItems:'center', 
+        backgroundColor: 'white'}}> 
                 <Image style={styles.profilePic} source={{uri: "https://picsum.photos/200/300"}} />
                 <Text style={styles.usernameHeader}>{props.name}</Text>
 
                 <View style={styles.options}>
                     <Button icon={<SimpleLineIcons name="options" size={24} color="black" />} 
-                        buttonStyle={{backgroundColor: "transparent"}} />
+                        buttonStyle={{backgroundColor: "white"}} />
                 </View>
             </View>
 
@@ -29,7 +30,8 @@ const Post = (props) =>{
                 <Image style={styles.imageOrVideo} source={{uri: "https://picsum.photos/200/300"}}  />
             </View>
 
-            <View style={{flexDirection: 'row', justifyContent: 'flex-start'}}>
+            <View style={{flexDirection: 'row', justifyContent: 'flex-start', 
+        backgroundColor: 'white'}}>
 
                 <Button onPress={()=> addTwoNumbers(num1, num2)} icon={<AntDesign name="hearto" size={25} color="black" /> }
                     buttonStyle={{backgroundColor: "transparent"}} />
@@ -45,19 +47,22 @@ const Post = (props) =>{
             
             </View>
 
-            <View style={{flexDirection: 'row', flexWrap: 'wrap', alignItems:'center'}}>
+            <View style={{flexDirection: 'row', flexWrap: 'wrap', alignItems:'center', 
+        backgroundColor: 'white'}}>
                 <Text style={styles.usernameCaption}> {props.name}</Text> 
                 
                 <Text style={styles.caption}> {props.caption}</Text> 
             </View>
 
             
-            <View style={{flexDirection: 'row', flexWrap: 'wrap', alignItems:'center'}}>
+            <View style={{flexDirection: 'row', flexWrap: 'wrap', alignItems:'center', 
+        backgroundColor: 'white'}}>
                 <Image style={styles.profilePicCurrentUser} source={{uri: "https://picsum.photos/200/300"}}  />
                 <Text style={{color: 'grey'}}> Add a comment... </Text>
             </View> 
 
-            <Text style={{color: 'grey', paddingLeft: '1%'}}> {props.timePosted} </Text>
+            <Text style={{color: 'grey', paddingLeft: '1%', 
+        backgroundColor: 'white'}}> {props.timePosted} </Text>
 
         </View>
     )
@@ -71,11 +76,13 @@ const styles = StyleSheet.create({
         marginHorizontal: 9
     },
     usernameHeader:{
+        backgroundColor: 'white',
         fontSize: 14,
         fontWeight: 'bold'
     },
     options:{
-        paddingLeft: '60%',
+        paddingLeft: '62%',
+        backgroundColor: 'white'
     },
     imageOrVideo:{
         paddingTop : 70,
@@ -83,6 +90,7 @@ const styles = StyleSheet.create({
         width: '100%'
     },
     usernameCaption:{
+        backgroundColor: 'white',
         fontSize: 14,
         fontWeight: 'bold',
         paddingLeft: '3%'
